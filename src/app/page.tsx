@@ -45,7 +45,7 @@ function Card({ children, onClick }: CardProps) {
   );
 }
 
-export default Card;
+
 //INPUT component for entering text
 interface InputProps {
   value: string;
