@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Dialog } from "@headlessui/react";
+import { Dialog } from "@headlessui/react":
 import React from 'react';
 
 interface ButtonProps {
