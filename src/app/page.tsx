@@ -81,11 +81,12 @@ function Select({ onValueChange, defaultValue, children }: SelectProps) {
   );
 }
 // Skeleton component for showing loading placeholder (animated pulse effect)
-function Skeleton({ className }) {
-  return (
-    <div className={`bg-gray-300 ${className} animate-bounce`} />
+interface SkeletonProps {
+  className?: string; 
+}
 
-  );
+function Skeleton({ className = "" }: SkeletonProps) {
+  return <div className={`bg-gray-300 ${className} animate-bounce`} />;
 }
 
 
