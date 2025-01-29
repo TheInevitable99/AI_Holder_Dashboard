@@ -7,7 +7,7 @@ import React from 'react';
 
 interface ButtonProps {
   children: React.ReactNode;  // This ensures children is typed correctly
-  [key: string]: unkown;         // To accept other props like onClick, etc.
+  [key: string]: unknown;         // To accept other props like onClick, etc.
 }
 
 function Button({ children, ...props }: ButtonProps) {
