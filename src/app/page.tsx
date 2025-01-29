@@ -21,24 +21,21 @@ function Button({ children, ...props }: ButtonProps) {
   );
 }
 
+
 export default Button;
 
 
 // UI Components
 
 //Button Components
-function Button({ children, ...props }) {
-  return (
-    <button
-      className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
-      {...props}
-    >
-      {children}
-    </button>
-  );
+
+
+interface CardProps {
+  children: React.ReactNode;
+  onClick?: () => void; // You can make this optional depending on your use case
 }
 
-function Card({ children, onClick }) {
+function Card({ children, onClick }: CardProps) {
   return (
     <motion.div whileHover={{ scale: 1.05 }} onClick={onClick}>
       <div className="border rounded-lg shadow p-4 cursor-pointer">
@@ -47,7 +44,14 @@ function Card({ children, onClick }) {
     </motion.div>
   );
 }
+
+export default Card;
 //INPUT component for entering text
+interface InputProps {
+  value: string;
+  onChange: React.ChangeEventHandler<HTMLInputElement>;
+  placeholder: string;
+}
 function Input({ value, onChange, placeholder }) {
   return (
     <input
