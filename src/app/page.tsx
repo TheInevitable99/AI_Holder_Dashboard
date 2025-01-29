@@ -17,12 +17,10 @@ function Button({ children }: { children: ReactNode }) {
   );
 }
 
-function Card({ children, onClick }) {
+function Card({ children, onClick }: { children: React.ReactNode, onClick: () => void }) {
   return (
     <motion.div whileHover={{ scale: 1.05 }} onClick={onClick}>
-      <div className="border rounded-lg shadow p-4 cursor-pointer">
-        {children}
-      </div>
+      <div className="border rounded-lg shadow p-4 cursor-pointer">{children}</div>
     </motion.div>
   );
 }
