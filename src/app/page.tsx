@@ -7,7 +7,7 @@ import React from 'react';
 
 interface ButtonProps {
   children: React.ReactNode;  // This ensures children is typed correctly
-  [key: string]: any;         // To accept other props like onClick, etc.
+  [key: string]: unkown;         // To accept other props like onClick, etc.
 }
 
 function Button({ children, ...props }: ButtonProps) {
@@ -51,7 +51,7 @@ interface InputProps {
   onChange: React.ChangeEventHandler<HTMLInputElement>;
   placeholder: string;
 }
-function Input({ value, onChange, placeholder }) {
+function Input({ value, onChange, placeholder }:InputProps) {
   return (
     <input
       type="text"
