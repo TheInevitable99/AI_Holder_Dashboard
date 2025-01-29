@@ -3,6 +3,26 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Dialog } from "@headlessui/react";
+import React from 'react';
+
+interface ButtonProps {
+  children: React.ReactNode;  // This ensures children is typed correctly
+  [key: string]: any;         // To accept other props like onClick, etc.
+}
+
+function Button({ children, ...props }: ButtonProps) {
+  return (
+    <button
+      className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
+      {...props}
+    >
+      {children}
+    </button>
+  );
+}
+
+export default Button;
+
 
 // UI Components
 
