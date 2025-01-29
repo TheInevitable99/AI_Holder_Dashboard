@@ -83,7 +83,7 @@ function Skeleton({ className }) {
 }
 
 
-const sampleData : ImageData[] = [ [
+const sampleData : ImageData[] = [ 
   { id: 1, title: "Alien world ", date: "2025-01-27", model: "Type 1 civilisation", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSH-UD5VkxYkHCcZD2joco-C6BAkjHRO7gaIw&s" },
   { id: 2, title: "Alien world ", date: "2025-01-26", model: "Type 2 civilisation",  image: "https://media.gettyimages.com/id/909222638/vector/alien-planets-in-orbit-around-a-dyson-sphere.jpg?s=1024x1024&w=gi&k=20&c=zWmBXHVFCaq5XlIvfXQdtlGclM0ChcOCQAxs1lWdno0=" },
   { id: 3, title: "Extraterrestrial ", date: "2025-01-24", model: "Terra", image: "https://img.freepik.com/premium-photo/portrait-creepy-humanoid-alien-created-with-generative-ai_419341-3055.jpg" },
