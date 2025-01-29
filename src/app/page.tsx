@@ -25,7 +25,7 @@ function Card({ children, onClick }: { children: React.ReactNode, onClick: () =>
   );
 }
 //INPUT component for entering text
-function Input({ value, onChange, placeholder }) {
+function Input({ value, onChange, placeholder }: { value: string, onChange: Function, placeholder: string }) {
   return (
     <input
       type="text"
