@@ -3,14 +3,11 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Dialog } from "@headlessui/react";
-import React from 'react';
 
-interface ButtonProps {
-  children: React.ReactNode;  // This ensures children is typed correctly
-  [key: string]: unknown;         // To accept other props like onClick, etc.
-}
+// UI Components
 
-function Button({ children, ...props }: ButtonProps) {
+//Button Components
+function Button({ children, ...props }) {
   return (
     <button
       className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
@@ -21,20 +18,7 @@ function Button({ children, ...props }: ButtonProps) {
   );
 }
 
-
-
-
-// UI Components
-
-//Button Components
-
-
-interface CardProps {
-  children: React.ReactNode;
-  onClick?: () => void; // You can make this optional depending on your use case
-}
-
-function Card({ children, onClick }: CardProps) {
+function Card({ children, onClick }) {
   return (
     <motion.div whileHover={{ scale: 1.05 }} onClick={onClick}>
       <div className="border rounded-lg shadow p-4 cursor-pointer">
@@ -43,15 +27,8 @@ function Card({ children, onClick }: CardProps) {
     </motion.div>
   );
 }
-
-
 //INPUT component for entering text
-interface InputProps {
-  value: string;
-  onChange: React.ChangeEventHandler<HTMLInputElement>;
-  placeholder: string;
-}
-function Input({ value, onChange, placeholder }:InputProps) {
+function Input({ value, onChange, placeholder }) {
   return (
     <input
       type="text"
@@ -63,13 +40,7 @@ function Input({ value, onChange, placeholder }:InputProps) {
   );
 }
 
-interface SelectProps {
-  onValueChange: (value: string) => void; // Define the function type
-  defaultValue: string;
-  children: React.ReactNode;
-}
-
-function Select({ onValueChange, defaultValue, children }: SelectProps) {
+function Select({ onValueChange, defaultValue, children }) {
   return (
     <select
       defaultValue={defaultValue}
@@ -80,17 +51,16 @@ function Select({ onValueChange, defaultValue, children }: SelectProps) {
     </select>
   );
 }
-// Skeleton component for showing loading placeholder (animated pulse effect)
-interface SkeletonProps {
-  className?: string; 
+// Skeleton component for showing loading placeholder 
+function Skeleton({ className }) {
+  return (
+    <div className={`bg-gray-300 ${className} animate-bounce`} />
+
+  );
 }
 
-function Skeleton({ className = "" }: SkeletonProps) {
-  return <div className={`bg-gray-300 ${className} animate-bounce`} />;
-}
-
-
-const sampleData : ImageData[] = [ 
+//Sample ai images , url of the images from online sources
+const sampleData = [
   { id: 1, title: "Alien world ", date: "2025-01-27", model: "Type 1 civilisation", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSH-UD5VkxYkHCcZD2joco-C6BAkjHRO7gaIw&s" },
   { id: 2, title: "Alien world ", date: "2025-01-26", model: "Type 2 civilisation",  image: "https://media.gettyimages.com/id/909222638/vector/alien-planets-in-orbit-around-a-dyson-sphere.jpg?s=1024x1024&w=gi&k=20&c=zWmBXHVFCaq5XlIvfXQdtlGclM0ChcOCQAxs1lWdno0=" },
   { id: 3, title: "Extraterrestrial ", date: "2025-01-24", model: "Terra", image: "https://img.freepik.com/premium-photo/portrait-creepy-humanoid-alien-created-with-generative-ai_419341-3055.jpg" },
@@ -105,16 +75,15 @@ export default function Dashboard() {
   const [filter, setFilter] = useState("All");
   const [loading, setLoading] = useState(true);
   const [darkMode, setDarkMode] = useState(false);
-  const [modalImage, setModalImage] = useState<ImageData | null>(null);
-  
-
+  const [modalImage, setModalImage] = useState(null);
+//Delay
   useEffect(() => {
     setTimeout(() => {
       setImages(sampleData);
       setLoading(false);
     }, 1000);
   }, []);
-
+//Image filteration based on input
   const filteredImages = images.filter((image) =>
     (filter === "All" || image.model === filter) && image.title.toLowerCase().includes(search.toLowerCase())
   );
