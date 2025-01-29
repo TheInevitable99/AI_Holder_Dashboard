@@ -22,7 +22,6 @@ function Button({ children, ...props }: ButtonProps) {
 }
 
 
-export default Button;
 
 
 // UI Components
