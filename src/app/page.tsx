@@ -63,7 +63,13 @@ function Input({ value, onChange, placeholder }:InputProps) {
   );
 }
 
-function Select({ onValueChange, defaultValue, children }) {
+interface SelectProps {
+  onValueChange: (value: string) => void; // Define the function type
+  defaultValue: string;
+  children: React.ReactNode;
+}
+
+function Select({ onValueChange, defaultValue, children }: SelectProps) {
   return (
     <select
       defaultValue={defaultValue}
