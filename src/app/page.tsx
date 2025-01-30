@@ -149,8 +149,8 @@ export default function Dashboard() {
       image.title.toLowerCase().includes(search.toLowerCase())
   );
 
-  return (
-    <div className={`p-6 max-w-5xl mx-auto ${darkMode ? "dark" : ""}`}>
+  return (  
+    <div className={`p-6 max-w-5xl mx-auto ${darkMode ? "bg-gray-900 text-white" : "bg-white text-black"}`}>
       <button
         onClick={() => setDarkMode(!darkMode)}
         className="mb-4 px-4 py-2 bg-red-700 text-white rounded"
