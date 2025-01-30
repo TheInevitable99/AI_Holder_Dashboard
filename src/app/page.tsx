@@ -76,7 +76,7 @@ function Select({ onValueChange, defaultValue, children }: SelectProps) {
 }
 // Skeleton component for showing loading placeholder 
 function Skeleton({ className }: { className: string }) {
-  return <div className={`bg-gray-300 ${className} bounce`} />;
+  return <div className={`bg-gray-300 ${className} animate-pulse`} />;
 }
 
 interface ImageData {
